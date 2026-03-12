@@ -7,6 +7,12 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - What did the game look like the first time you ran it?
 - List at least two concrete bugs you noticed at the start  
   (for example: "the secret number kept changing" or "the hints were backwards").
+### Problems
+- The hint is reversed, it tell me to go higher even though I was above the secret number or it tells me to go lower when I was below the secret number
+- Clicking new game after reaching game over / win state doesn't properly restart the game
+- Clicking submit guess sometime doesn't properly update the value of my current attempt
+- Easy mode secret value should be between 1-20 but the current value can be outside the range. Same thing with hard mode.
+- The range of value for Hard difficulty is smaller then Normal difficulty. It likely should be larger
 
 ---
 
