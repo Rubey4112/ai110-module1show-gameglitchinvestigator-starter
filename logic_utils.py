@@ -37,13 +37,16 @@ def parse_guess(raw: str):
     if raw == "":
         return False, None, "Enter a guess."
 
+    if "." in raw:
+        return False, None, "Enter a whole number, not a decimal."
+
     try:
-        if "." in raw:
-            value = int(float(raw))
-        else:
-            value = int(raw)
+        value = int(raw)
     except Exception:
         return False, None, "That is not a number."
+
+    if value < 1:
+        return False, None, "Guess must be a positive number."
 
     return True, value, None
 
@@ -70,13 +73,14 @@ def check_guess(guess, secret):
             return "Too Low", "📈 Go HIGHER!"
     except TypeError:
         g = str(guess)
-        if g == secret:
+        s = str(secret)
+        if g == s:
             return "Win", "🎉 Correct!"
-        if g > secret:
+        if g > s:
             return "Too High", "📉 Go LOWER!"
         return "Too Low", "📈 Go HIGHER!"
 
-#FIX: Guessing too high will no longer gives points on even numbered attempts.
+# FIX: Guessing too high will no longer gives points on even numbered attempts.
 def update_score(current_score: int, outcome: str, attempt_number: int):
     """Calculate and return the updated score based on the round outcome.
 

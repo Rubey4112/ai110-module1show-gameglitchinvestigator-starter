@@ -33,6 +33,8 @@ It wrote the code, ran away, and now the game is unplayable.
 
 - [x] Winning Demo Photo 
    ![winning demo](./images/winning_demo.png)
+- [x] `Challenge 1: Advanced Edge-Case Testing` pytest result
+   ![test case passing](./images/advance_test_cases.png)
 
 ## 🚀 Stretch Features
 
