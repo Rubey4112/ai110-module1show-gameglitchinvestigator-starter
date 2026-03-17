@@ -26,7 +26,7 @@ Other problems that I noticed:
 ---
 
 I utilized Claude to help me debug. The AI succefully fixed the incorrect hint problem. I visually verified the fix and checked it in game.
-One incorrect suggest that the AI made (this time it was CoPilot using inline chat) was when I asked it to rewrite the logic_utils import statement in the `test_game_logic.py` file. I visually checked the code and all CoPilot did was rewrote the import statement to be two lines without actually changing anything logically. I eventually asked Claude to fix the import statement while providing it the pytest error code `E   ModuleNotFoundError: No module named 'logic_utils'`. 
+One incorrect suggest that the AI made (this time it was Copilot using inline chat) was when I asked it to rewrite the logic_utils import statement in the `test_game_logic.py` file. I visually checked the code and all Copilot did was rewrote the import statement to be two lines without actually changing anything logically. I eventually asked Claude to fix the import statement while providing it the pytest error code `E   ModuleNotFoundError: No module named 'logic_utils'`. 
 I also tried messing around with the agent mode feature of Claude but I just found it to be more cumbersome then helpful for a simple program like this.
 
 
@@ -49,9 +49,21 @@ My method for testing my fix for the hint bug was to test a value that is 1 abov
 
 ---
 
+The secret number changing problem was not present when I cloned the repo since the secret number was correctly stored in the streamlit session state. Everytime an action is taken on the website, Streamlit re-execute the Python file. This mean that every normal varible assignment statement is reran. As such, if the secret number variable is declera as a normal variable, it would get a new value everytime the website is interacted with. Streamlit's solution is session state; session state is a special dictionary in Streamlit that persist over re-execution, which is use to store persistant variable. Simply check if the secret value exist in the session state dictionary, if not, then generate a random value and add it to the session state.
+
+
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+A habit that I wil lget into after this project is to have AI generate unit test. Testing logics are simple to visually verify and it can use to verify AI generated code in the app logic.
+One thing that would do differently next time is to use a markdown file to document my structure, i.e. a (CLAUDE.md)[https://claude.com/blog/using-claude-md-files] file or a [copilot-instructions.md](https://code.visualstudio.com/docs/copilot/customization/custom-instructions#_use-a-claudemd-file) file. My goal to stop repeating the same instructions over multiple chat sessions and to document important context lest I forget to provide it the the AI.
+I still think that a good understanding of foundational CS is require for effective and ethical use of AI for writing code. You need to know when outputting what you want vs. total garbage.
+
+## AI model comparison (Claude vs. Copilot)
+**This information is a repeat of the answer for question 2 **
+When I ask Copilot (Auto mode) to rewrite the logic_utils import statement in the `test_game_logic.py` file. Copilot only rewrote the import statement to be two lines without actually changing anything logically. This poort perfomance might be due to me using inline chat without providing the model with the context or error code.
+I eventually asked Claude to fix the import statement while providing it the pytest error code `E   ModuleNotFoundError: No module named 'logic_utils'`. Claude fixed the import problem succesfully. 
