@@ -33,11 +33,13 @@ It wrote the code, ran away, and now the game is unplayable.
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. Choose a difficulty — Select Easy (1–20, 6 attempts), Normal (1–100, 8 attempts), or Hard (1–200, 5 attempts) from the sidebar. A secret number is randomly picked within that range.
+2. Read the hint — The info bar tells you how many attempts you have left before the game locks.
+3. Type a guess — Enter a number in the text field and click "Submit Guess." Decimals are accepted and rounded automatically; non-numbers show an error.
+4. Receive feedback — If "Show hint" is checked, the game tells you whether your guess was too high or too low. Your guess is added to the history log.
+5. Score changes with each guess — A correct guess awards 100 minus 10× (attempt number + 1) points (minimum 10). Every wrong guess deducts 5 points.
+6. Win or lose — Guess the exact number before running out of attempts to win (confetti included). If you exhaust all attempts, the secret number is revealed and the game ends.
+7. Start over — Click "New Game" at any time to reset the secret number, attempts, score, and history, then play again.
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
