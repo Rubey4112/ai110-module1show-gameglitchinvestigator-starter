@@ -14,9 +14,11 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| 5 | The game telling me to go higher (magic number = 63) | The game told me to go lower | N/A |
+| 70 | The game telling me to go lower (magic number = 63)  | The game told me to go higher | N/A |
+| New game button doesn't work | Restart the game with a new secret number | Doesn't restart the game | |
+| Normal difficulty has a larger range then Hard  | Normal Range (1-50), Hard Range () | Doesn't restart the game | |
+| 30 | Score get subtracted when guessing too high | Sometime score get added when guessing too high | |
 
 ---
 
